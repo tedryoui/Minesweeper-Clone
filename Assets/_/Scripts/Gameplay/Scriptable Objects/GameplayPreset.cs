@@ -11,6 +11,12 @@ namespace _.Scripts.Gameplay.Scriiptable_Objects
         [SerializeField] private int _mineCount;
         
         [TimeField(TimeFieldAttribute.TimeFieldType.Minutes, TimeFieldAttribute.TimeFieldType.Seconds)]
-        [SerializeField] private int _timerSeconds;
+        [SerializeField] private float _timerSeconds;
+
+        public int Width => _width;
+        public int Height => _height;
+        public int MineCount => _mineCount;
+
+        public float TimerSeconds => _timerSeconds;
     }
 }

@@ -9,7 +9,6 @@ namespace _.Scripts.Structures
     public class GridStructure<T>
     where T : class, new()
     {
-        [Serializable]
         public class Node
         {
 #region Fields
