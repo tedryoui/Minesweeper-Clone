@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23124aeb72a14435960f361fdef01f7a, type: 3}
+  m_Name: Project Settings
+  m_EditorClassIdentifier: Assembly-CSharp::_.Scripts.Scriptable_Objects.ProjectSettings
+  _gameplayPresets:
+  - Identity: Easy Preset
+    PresetReference: {fileID: 11400000, guid: 59b4b03bcb17ae84b86b4f922c782e22, type: 2}
+  - Identity: Normal Preset
+    PresetReference: {fileID: 11400000, guid: e1401ab6eb9e238488155e6da90e7200, type: 2}
+  - Identity: Hard Preset
+    PresetReference: {fileID: 11400000, guid: eced620c0ef532a4daca690546e51883, type: 2}
+  _userInterfacePairs:
+  - Identity: Win UI
+    UserInterface: {fileID: 3723147350209776456, guid: 372eeceb8adb9c5418abc29d1458cc80, type: 3}
+  - Identity: Lose UI
+    UserInterface: {fileID: 7557682415092633001, guid: 76cf53b5f02919847839dd7fafbe0f16, type: 3}
+  - Identity: Settings UI
+    UserInterface: {fileID: 6513456761318250857, guid: 9a83b909c92242b49abf9be933074a0a, type: 3}
+  - Identity: Gameplay Preset UI
+    UserInterface: {fileID: 1539670865864957, guid: 5c0ef96e21ce9284fb478d53c07f6c83, type: 3}
+  - Identity: Session UI
+    UserInterface: {fileID: 5085227501454132924, guid: d1ef2677b3c70b14f878e050513c077a, type: 3}
+  - Identity: Menu UI
+    UserInterface: {fileID: 6657575154007170362, guid: 376f2dd9a925dcd4aa1b360ab4e28f44, type: 3}

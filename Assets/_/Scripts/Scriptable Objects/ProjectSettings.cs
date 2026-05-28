@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using _.Scripts.Gameplay.Scriiptable_Objects;
+using _.Scripts.Services;
 using UnityEngine;
 
 namespace _.Scripts.Scriptable_Objects
@@ -14,9 +15,18 @@ namespace _.Scripts.Scriptable_Objects
             public string         Identity;
             public GameplayPreset PresetReference;
         }
+
+        [Serializable]
+        public struct UserInterfacePair
+        {
+            public string                Identity;
+            public AbstractUserInterface UserInterface;
+        }
         
         [SerializeField] private List<GameplayPresetPair> _gameplayPresets;
+        [SerializeField] private List<UserInterfacePair> _userInterfacePairs;
 
         public IReadOnlyCollection<GameplayPresetPair> GameplayPresets => _gameplayPresets;
+        public IReadOnlyCollection<UserInterfacePair> UserInterfacePairs => _userInterfacePairs;
     }
 }

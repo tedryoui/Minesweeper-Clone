@@ -26,7 +26,7 @@ namespace _.Scripts.Services
                 throw new  ArgumentException("Model cannot be null.");
 
             if (HasModel(identity))
-                throw new ArgumentException("Model is already exists.");
+                throw new Exception("Model is already exists.");
 
             if (!_dataModels.TryAdd(identity, model))
                 throw new Exception($"An error occured while adding model {identity}");
