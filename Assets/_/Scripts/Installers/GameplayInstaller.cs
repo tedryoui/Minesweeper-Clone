@@ -1,4 +1,5 @@
-﻿using VContainer;
+﻿using _.Scripts.Entry_Point;
+using VContainer;
 using VContainer.Unity;
 
 namespace _.Scripts.Installers
@@ -7,7 +8,7 @@ namespace _.Scripts.Installers
     {
         protected override void Configure(IContainerBuilder builder)
         {
-            
+            builder.RegisterEntryPoint<GameplayEntryPoint>().AsImplementedInterfaces();
         }
     }
 }
