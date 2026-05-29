@@ -912,6 +912,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fe1311ef3e4721a32a73111897b420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_.Scripts.User_Interface.WinUserInterface
+  _canvas: {fileID: 4160815803081011946}
+  _scoreTMP: {fileID: 5428293115664438161}
+  _menuButton: {fileID: 1352642614615571442}
 --- !u!223 &4160815803081011946
 Canvas:
   m_ObjectHideFlags: 0

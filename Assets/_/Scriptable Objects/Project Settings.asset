@@ -32,3 +32,22 @@ MonoBehaviour:
     UserInterface: {fileID: 5085227501454132924, guid: d1ef2677b3c70b14f878e050513c077a, type: 3}
   - Identity: Menu UI
     UserInterface: {fileID: 6657575154007170362, guid: 376f2dd9a925dcd4aa1b360ab4e28f44, type: 3}
+  - Identity: Confirmation UI
+    UserInterface: {fileID: 3283166385889396111, guid: a4a7d1515762ffd4597d1877213f682d, type: 3}
+  _sessionSettings:
+    MapWidth:
+      x: 3
+      y: 8
+    MapHeight:
+      x: 3
+      y: 8
+    MineCountPercentage:
+      x: 0.1
+      y: 0.5
+    TimerVariants:
+    - Identity: One Minute
+      Seconds: 60
+    - Identity: Two Minute
+      Seconds: 120
+    - Identity: Three Minute
+      Seconds: 180

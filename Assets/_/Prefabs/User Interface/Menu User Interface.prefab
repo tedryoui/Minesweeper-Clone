@@ -364,6 +364,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ca1f9b2c2f4e9993a1a961dd4fe2f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_.Scripts.User_Interface.MenuUserInterface
+  _canvas: {fileID: 8666778806302898260}
+  _playButton: {fileID: 7928412349387262754}
+  _settingsButton: {fileID: 4294389249126280996}
 --- !u!223 &8666778806302898260
 Canvas:
   m_ObjectHideFlags: 0

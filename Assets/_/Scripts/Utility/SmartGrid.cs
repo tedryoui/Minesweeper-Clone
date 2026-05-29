@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -12,8 +13,16 @@ namespace _.Scripts.Utility
         [SerializeField] private int _rows = 3;
         [SerializeField] private float _spacing = 8f;
 
-        private RectTransform _rectTransform;
-        private readonly List<RectTransform> _cells = new();
+        private          RectTransform                   _rectTransform;
+        private readonly Dictionary<int2, RectTransform> _cells = new();
+        private event Action                             _onRebuild;
+        
+        public IReadOnlyDictionary<int2, RectTransform> Cells => _cells;
+        public event Action OnRebuild
+        {
+            add => _onRebuild += value;
+            remove => _onRebuild -= value;
+        }
 
 #region Unity Lifecycle
 
@@ -45,6 +54,12 @@ namespace _.Scripts.Utility
 
 #region Public API
 
+        public void SetSize(int width, int height)
+        {
+            _columns = width;
+            _rows = height;
+        }
+        
         public void Rebuild()
         {
             if (_rectTransform == null)
@@ -58,6 +73,8 @@ namespace _.Scripts.Utility
             var cellSize = CalculateCellSize();
 
             SpawnCells(cellSize);
+            
+            _onRebuild?.Invoke();
         }
 
 #endregion
@@ -108,7 +125,7 @@ namespace _.Scripts.Utility
                         originY - row * (cellSize.y + _spacing)
                     );
 
-                    _cells.Add(cell);
+                    _cells.Add(new int2(col, row), cell);
                 }
             }
         }
@@ -129,10 +146,10 @@ namespace _.Scripts.Utility
         {
             foreach (var cell in _cells)
             {
-                if (cell == null) continue;
+                if (cell.Value == null) continue;
 
 #if UNITY_EDITOR
-                DestroyImmediate(cell.gameObject);
+                DestroyImmediate(cell.Value.gameObject);
 #else
                 Destroy(cell.gameObject);
 #endif

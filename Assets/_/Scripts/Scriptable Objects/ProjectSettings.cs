@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using _.Scripts.Attributes;
 using _.Scripts.Gameplay.Scriiptable_Objects;
 using _.Scripts.Services;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace _.Scripts.Scriptable_Objects
@@ -22,11 +24,30 @@ namespace _.Scripts.Scriptable_Objects
             public string                Identity;
             public AbstractUserInterface UserInterface;
         }
-        
-        [SerializeField] private List<GameplayPresetPair> _gameplayPresets;
-        [SerializeField] private List<UserInterfacePair> _userInterfacePairs;
 
-        public IReadOnlyCollection<GameplayPresetPair> GameplayPresets => _gameplayPresets;
-        public IReadOnlyCollection<UserInterfacePair> UserInterfacePairs => _userInterfacePairs;
+        [Serializable]
+        public struct SessionSettingsCollection
+        {
+            [Serializable]
+            public struct TimerPair
+            {
+                public string Identity;
+                [TimeField]
+                public float  Seconds;
+            }
+            
+            public int2        MapWidth;
+            public int2        MapHeight;
+            public float2      MineCountPercentage;
+            public TimerPair[] TimerVariants;
+        }
+        
+        [SerializeField] private List<GameplayPresetPair>  _gameplayPresets;
+        [SerializeField] private List<UserInterfacePair>   _userInterfacePairs;
+        [SerializeField] private SessionSettingsCollection _sessionSettings;
+
+        public IReadOnlyCollection<GameplayPresetPair> GameplayPresets    => _gameplayPresets;
+        public IReadOnlyCollection<UserInterfacePair>  UserInterfacePairs => _userInterfacePairs;
+        public SessionSettingsCollection               SessionSettings    => _sessionSettings;
     }
 }

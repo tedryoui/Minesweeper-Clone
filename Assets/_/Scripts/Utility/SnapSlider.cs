@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,28 +8,20 @@ using UnityEngine.UI;
 
 namespace _.Scripts.UI
 {
-    /// <summary>
-    /// Слайдер с целочисленным значением [MinValue..MaxValue].
-    /// Визуально — N копий сегмента-прототипа, равномерно распределённых по ширине.
-    /// Включённые сегменты (≤ Value) отображаются оригинально, выключенные затемнены.
-    /// Drag меняет значение через дельту позиции пальца/мыши, при отпускании — snap.
-    /// </summary>
     [ExecuteAlways]
-    [RequireComponent(typeof(RectTransform))]
     public class SnapSlider : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
     {
         [SerializeField] private RectTransform _segmentPrototype;
-
+        [SerializeField] private bool          _useNumeration;
+        
         [SerializeField] private int   _minValue = 0;
         [SerializeField] private int   _maxValue = 5;
         [SerializeField] private int   _value    = 0;
         [SerializeField] private float _spacing  = 8f;
 
-        [Header("Dimming")]
         [SerializeField] private Color _activeColor   = Color.white;
         [SerializeField] private Color _inactiveColor = new Color(0.25f, 0.25f, 0.25f, 1f);
 
-        /// <summary>Срабатывает только при реальной смене значения после snap.</summary>
         public event Action<int> OnValueChanged;
 
         public int Value
@@ -37,15 +30,13 @@ namespace _.Scripts.UI
             set => ApplyValue(math.clamp(value, _minValue, _maxValue));
         }
 
-        // ── приватное состояние ──────────────────────────────────────────────
-
         private RectTransform              _rectTransform;
         private Canvas                     _canvas;
         private readonly List<RectTransform> _segments = new List<RectTransform>();
 
         private bool  _isDragging;
-        private float _dragAccumulator;   // накопленная дробная дельта в шагах
-        private float _pointerPrevX;      // предыдущая X в локальных координатах трека
+        private float _dragAccumulator;   
+        private float _pointerPrevX;      
 
         private int Steps => math.max(1, _maxValue - _minValue);
 
@@ -91,7 +82,6 @@ namespace _.Scripts.UI
             Rebuild();
         }
 
-        /// <summary>Пересоздаёт все копии сегментов из прототипа.</summary>
         public void Rebuild()
         {
             if (_rectTransform == null)
@@ -118,6 +108,12 @@ namespace _.Scripts.UI
                 copy.sizeDelta        = new Vector2(cellSize, cellSize);
                 copy.anchoredPosition = SegmentPosition(i, count, cellSize);
 
+                if (_useNumeration)
+                {
+                    var text = copy.GetComponentInChildren<TextMeshProUGUI>();
+                    text.SetText((i + _minValue).ToString());
+                }
+
                 _segments.Add(copy);
             }
 
@@ -131,7 +127,7 @@ namespace _.Scripts.UI
         public void OnPointerDown(PointerEventData eventData)
         {
             _isDragging      = true;
-            _dragAccumulator = _value - _minValue;   // стартуем с текущего целого
+            _dragAccumulator = _value - _minValue;   
             _pointerPrevX    = LocalX(eventData);
         }
 
@@ -143,13 +139,11 @@ namespace _.Scripts.UI
             var deltaX     = currentX - _pointerPrevX;
             _pointerPrevX  = currentX;
 
-            // Переводим пиксели в шаги: весь трек соответствует Steps шагам
             var trackWidth = _rectTransform.rect.width;
             var deltaSteps = deltaX / trackWidth * Steps;
 
             _dragAccumulator = math.clamp(_dragAccumulator + deltaSteps, 0f, Steps);
 
-            // Превью без снэпа — красим по дробному значению
             RefreshTint(_minValue + _dragAccumulator);
         }
 
@@ -202,7 +196,7 @@ namespace _.Scripts.UI
             );
             return local.x;
         }
-
+        
 #endregion
 
 #region Visuals
@@ -216,17 +210,14 @@ namespace _.Scripts.UI
             OnValueChanged?.Invoke(_value);
         }
 
-        /// <summary>Красит по текущему целому значению.</summary>
         private void RefreshTint() => RefreshTint(_value);
 
-        /// <summary>Красит по дробному значению — для превью во время drag.</summary>
         private void RefreshTint(float floatValue)
         {
             for (var i = 0; i < _segments.Count; i++)
             {
                 if (_segments[i] == null) continue;
 
-                // Сегмент i активен если его порядковый номер попадает под floatValue
                 var active = (_minValue + i) <= floatValue;
                 SetSegmentColor(_segments[i], active ? _activeColor : _inactiveColor);
             }
@@ -252,7 +243,6 @@ namespace _.Scripts.UI
 
             _segments.Clear();
 
-            // Подчищаем возможные сироты после undo / hot-reload
             for (var i = _rectTransform.childCount - 1; i >= 0; i--)
             {
                 var child = _rectTransform.GetChild(i);

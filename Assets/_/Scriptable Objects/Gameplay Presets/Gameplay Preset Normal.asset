@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1ec587e3cfe430cb0804ac2bc0e5467, type: 3}
-  m_Name: Gameplay Preset Hard
+  m_Name: Gameplay Preset Normal
   m_EditorClassIdentifier: Assembly-CSharp::_.Scripts.Gameplay.Scriiptable_Objects.GameplayPreset
-  _width: 0
-  _height: 0
-  _mineCount: 0
-  _timerSeconds: 0
+  _width: 8
+  _height: 8
+  _mineCount: 20
+  _timerSeconds: 120

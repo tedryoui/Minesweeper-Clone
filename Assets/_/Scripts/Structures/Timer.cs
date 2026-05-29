@@ -10,9 +10,10 @@ namespace _.Scripts.Structures
     {
         private float _finalValue;
         private float _currentValue;
+        private bool  _isPaused;
 
-        private event Action onTimerCompleted;
-        private event Action onTimerStopped;
+        private event Action _onTimerCompleted;
+        private event Action _onTimerStopped;
 
         public float CurrentValue
         {
@@ -25,23 +26,40 @@ namespace _.Scripts.Structures
             }
         }
 
+        public event Action OnTimerCompleted
+        {
+            add => _onTimerCompleted += value;
+            remove => _onTimerCompleted -= value;
+        }
+
+        public event Action OnTimerStopped
+        {
+            add => _onTimerStopped += value;
+            remove => _onTimerStopped -= value;
+        }
+
         public Timer(float finalValue)
         {
-            _finalValue = finalValue;
+            _finalValue   = finalValue;
             _currentValue = 0f;
         }
 
         public Timer(float currentValue, float finalValue)
         {
-            _finalValue = finalValue;
+            _finalValue   = finalValue;
             _currentValue = currentValue;
         }
 
         public async void Run(CancellationToken cancellationToken = default)
         {
+            _isPaused = false;
+            
             while (!cancellationToken.IsCancellationRequested)
             {
                 await Task.Yield();
+                
+                if (_isPaused)
+                    continue;
 
                 _currentValue += Time.deltaTime;
 
@@ -50,9 +68,14 @@ namespace _.Scripts.Structures
             }
 
             if (cancellationToken.IsCancellationRequested)
-                onTimerStopped?.Invoke();
+                _onTimerStopped?.Invoke();
             else
-                onTimerCompleted?.Invoke();
+                _onTimerCompleted?.Invoke();
+        }
+
+        public void Pause(bool value = true)
+        {
+            _isPaused = value;
         }
     }
 }

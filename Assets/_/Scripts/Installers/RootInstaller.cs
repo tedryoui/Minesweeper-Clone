@@ -12,10 +12,8 @@ namespace _.Scripts.Installers
         
         protected override void Configure(IContainerBuilder builder)
         {
-            var dataService = new DataService();
-
-            builder.RegisterInstance<ProjectSettings>(_projectSettings);
-            builder.RegisterInstance<DataService>(dataService);
+            builder.RegisterInstance<ProjectSettings>(_projectSettings).AsSelf();
+            builder.Register<DataService>(Lifetime.Singleton).AsSelf();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -31,9 +32,9 @@ namespace _.Scripts.Structures
 
             public Node(int2 identity, IEnumerable<int2> neighborsIdentities, T value = null)
             {
-                _identity = identity;
-                _value    = value;
-                
+                _identity            = identity;
+                _value               = value;
+                _neighborsIdentities = neighborsIdentities.ToList();
             }
         }
 
@@ -48,6 +49,8 @@ namespace _.Scripts.Structures
 
 #region Properties
 
+        public IReadOnlyDictionary<int2, Node> Nodes => _nodes;
+        
         private int2[] NeighborsIdentitiesDeltas => new[]
         {
             new int2(-1, 0),
