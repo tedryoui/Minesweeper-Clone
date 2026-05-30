@@ -10,7 +10,6 @@ namespace _.Scripts.Installers
     {
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.Register<UserInterfaceService>(Lifetime.Scoped).AsSelf();
             builder.Register<SessionService>(Lifetime.Scoped).AsImplementedInterfaces().AsSelf();
             
             builder.RegisterEntryPoint<GameplayEntryPoint>();

@@ -8,6 +8,12 @@ namespace _.Scripts.Services
 {
     public class DataService
     {
+#region Structures
+
+        public interface IModel { }
+
+#endregion
+        
         private Dictionary<string, IModel> _dataModels;
 
         public DataService()
@@ -66,10 +72,5 @@ namespace _.Scripts.Services
         }
 
 #endregion
-    }
-
-    public interface IModel
-    {
-        
     }
 }

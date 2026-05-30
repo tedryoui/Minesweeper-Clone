@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6344229486142512095}
   - component: {fileID: 4993733877669084869}
   - component: {fileID: 8691552684685192818}
+  - component: {fileID: 8806299995542080783}
   m_Layer: 5
   m_Name: Lose User Interface
   m_TagString: Untagged
@@ -56,6 +57,29 @@ MonoBehaviour:
   _canvas: {fileID: 6344229486142512095}
   _restartButton: {fileID: 9000531058299090691}
   _menuButton: {fileID: 9121347486574414568}
+  _panelShowSFX: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+  _panelHideSFX: {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
+  _clickSFX: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
+  _hoverSFX: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
+  _canvasGroup: {fileID: 8806299995542080783}
+  _fadeInDuration: 0.25
+  _fadeInEase: 6
+  _fadeOutDuration: 0.25
+  _fadeOutEase: 6
+  _panelRectTransform: {fileID: 2471618959646551493}
+  _punchStrength: 0.1
+  _punchDuration: 0.35
+  _punchVibratio: 5
+  _punchElasticity: 0.25
+  _buttonScaleFactor: 0.95
+  _buttonScaleDuration: 0.1
+  _buttonScaleEase: 7
+  _buttonRotationStrength: 5
+  _buttonRotationDuration: 0.5
+  _buttonRotationVibratio: 10
+  _buttonRotationElasticity: 1
+  _showPunchTweenOffset: 0.08
+  _hideFadeOutDelay: 0.15
 --- !u!223 &6344229486142512095
 Canvas:
   m_ObjectHideFlags: 0
@@ -120,6 +144,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &8806299995542080783
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165088047645724182}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &326916951007296361
 GameObject:
   m_ObjectHideFlags: 0

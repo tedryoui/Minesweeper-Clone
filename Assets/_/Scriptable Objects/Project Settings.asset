@@ -12,28 +12,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23124aeb72a14435960f361fdef01f7a, type: 3}
   m_Name: Project Settings
   m_EditorClassIdentifier: Assembly-CSharp::_.Scripts.Scriptable_Objects.ProjectSettings
+  _volumeSteps: 5
+  _volumeSourceAssetReference:
+    m_AssetGUID: 7578a21d2ccafae479f6be78ab2f00bb
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _volumeRange:
+    x: -80
+    y: 20
+  _audioMixerAssetReference:
+    m_AssetGUID: e0fdd137859a3374ca4a051db4664d15
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   _gameplayPresets:
-  - Identity: Easy Preset
-    PresetReference: {fileID: 11400000, guid: 59b4b03bcb17ae84b86b4f922c782e22, type: 2}
-  - Identity: Normal Preset
-    PresetReference: {fileID: 11400000, guid: e1401ab6eb9e238488155e6da90e7200, type: 2}
-  - Identity: Hard Preset
-    PresetReference: {fileID: 11400000, guid: eced620c0ef532a4daca690546e51883, type: 2}
-  _userInterfacePairs:
-  - Identity: Win UI
-    UserInterface: {fileID: 3723147350209776456, guid: 372eeceb8adb9c5418abc29d1458cc80, type: 3}
-  - Identity: Lose UI
-    UserInterface: {fileID: 7557682415092633001, guid: 76cf53b5f02919847839dd7fafbe0f16, type: 3}
-  - Identity: Settings UI
-    UserInterface: {fileID: 6513456761318250857, guid: 9a83b909c92242b49abf9be933074a0a, type: 3}
-  - Identity: Gameplay Preset UI
-    UserInterface: {fileID: 1539670865864957, guid: 5c0ef96e21ce9284fb478d53c07f6c83, type: 3}
-  - Identity: Session UI
-    UserInterface: {fileID: 5085227501454132924, guid: d1ef2677b3c70b14f878e050513c077a, type: 3}
-  - Identity: Menu UI
-    UserInterface: {fileID: 6657575154007170362, guid: 376f2dd9a925dcd4aa1b360ab4e28f44, type: 3}
-  - Identity: Confirmation UI
-    UserInterface: {fileID: 3283166385889396111, guid: a4a7d1515762ffd4597d1877213f682d, type: 3}
+    _pairs:
+    - Identity: Easy Preset
+      Value: {fileID: 11400000, guid: 59b4b03bcb17ae84b86b4f922c782e22, type: 2}
+    - Identity: Normal Preset
+      Value: {fileID: 11400000, guid: e1401ab6eb9e238488155e6da90e7200, type: 2}
+    - Identity: Hard Preset
+      Value: {fileID: 11400000, guid: eced620c0ef532a4daca690546e51883, type: 2}
+  _userInterfaces:
+    _pairs:
+    - Identity: Menu UI
+      Value:
+        m_AssetGUID: 376f2dd9a925dcd4aa1b360ab4e28f44
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+    - Identity: Settings UI
+      Value:
+        m_AssetGUID: 9a83b909c92242b49abf9be933074a0a
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+    - Identity: Gameplay Preset UI
+      Value:
+        m_AssetGUID: 5c0ef96e21ce9284fb478d53c07f6c83
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+    - Identity: Session UI
+      Value:
+        m_AssetGUID: d1ef2677b3c70b14f878e050513c077a
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+    - Identity: Win UI
+      Value:
+        m_AssetGUID: 372eeceb8adb9c5418abc29d1458cc80
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+    - Identity: Lose UI
+      Value:
+        m_AssetGUID: 76cf53b5f02919847839dd7fafbe0f16
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 0
+    - Identity: Confirmation UI
+      Value:
+        m_AssetGUID: a4a7d1515762ffd4597d1877213f682d
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
   _sessionSettings:
     MapWidth:
       x: 3
@@ -45,9 +98,10 @@ MonoBehaviour:
       x: 0.1
       y: 0.5
     TimerVariants:
-    - Identity: One Minute
-      Seconds: 60
-    - Identity: Two Minute
-      Seconds: 120
-    - Identity: Three Minute
-      Seconds: 180
+      _pairs:
+      - Identity: One Minute
+        Value: 60
+      - Identity: Two Minute
+        Value: 120
+      - Identity: Three Minute
+        Value: 180

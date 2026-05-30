@@ -27,13 +27,13 @@ MonoBehaviour:
   defaultRecyclable: 0
   defaultAutoPlay: 3
   defaultUpdateType: 0
-  defaultTimeScaleIndependent: 0
+  defaultTimeScaleIndependent: 1
   defaultEaseType: 6
   defaultEaseOvershootOrAmplitude: 1.70158
   defaultEasePeriod: 0
   defaultAutoKill: 1
   defaultLoopType: 0
-  debugMode: 0
+  debugMode: 1
   debugStoreTargetId: 1
   showPreviewPanel: 1
   storeSettingsLocation: 1
@@ -51,5 +51,5 @@ MonoBehaviour:
     deUnityExtendedEnabled: 0
     epoOutlineEnabled: 0
   createASMDEF: 1
-  showPlayingTweens: 0
+  showPlayingTweens: 1
   showPausedTweens: 0

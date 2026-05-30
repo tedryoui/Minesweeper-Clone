@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ec587e3cfe430cb0804ac2bc0e5467, type: 3}
   m_Name: Gameplay Preset Easy
   m_EditorClassIdentifier: Assembly-CSharp::_.Scripts.Gameplay.Scriiptable_Objects.GameplayPreset
-  _width: 4
-  _height: 4
-  _mineCount: 3
-  _timerSeconds: 60
+  width: 4
+  height: 4
+  mineCount: 4
+  timerSeconds: 60

@@ -872,6 +872,7 @@ GameObject:
   - component: {fileID: 4160815803081011946}
   - component: {fileID: 7461673907361566160}
   - component: {fileID: 6782378948638727795}
+  - component: {fileID: 5920849129896179371}
   m_Layer: 5
   m_Name: Win User Interface
   m_TagString: Untagged
@@ -915,6 +916,29 @@ MonoBehaviour:
   _canvas: {fileID: 4160815803081011946}
   _scoreTMP: {fileID: 5428293115664438161}
   _menuButton: {fileID: 1352642614615571442}
+  _panelShowSFX: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+  _panelHideSFX: {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
+  _clickSFX: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
+  _hoverSFX: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
+  _canvasGroup: {fileID: 5920849129896179371}
+  _fadeInDuration: 0.25
+  _fadeInEase: 6
+  _fadeOutDuration: 0.25
+  _fadeOutEase: 6
+  _panelRectTransform: {fileID: 7013456490654256625}
+  _punchStrength: 0.1
+  _punchDuration: 0.35
+  _punchVibratio: 5
+  _punchElasticity: 0.25
+  _buttonScaleFactor: 0.95
+  _buttonScaleDuration: 0.1
+  _buttonScaleEase: 7
+  _buttonRotationStrength: 5
+  _buttonRotationDuration: 0.5
+  _buttonRotationVibratio: 10
+  _buttonRotationElasticity: 1
+  _showPunchTweenOffset: 0.08
+  _hideFadeOutDelay: 0.15
 --- !u!223 &4160815803081011946
 Canvas:
   m_ObjectHideFlags: 0
@@ -979,6 +1003,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &5920849129896179371
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8635735930348131488}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8689722311700839471
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Default Local Group
+  m_GUID: cbcaba1cd3cde1d4890d45058a9da09a
+  m_SerializeEntries:
+  - m_GUID: 3d2cf1d48e6baac4f9b3bfd998e91719
+    m_Address: Assets/_/Fonts
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63cfa6e0aac30b64abefae6992b104ce
+    m_Address: Assets/_/Audio/Clips
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7578a21d2ccafae479f6be78ab2f00bb
+    m_Address: Assets/_/Prefabs/Audio.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ddd6b833535108047909e7c9619c8ab5
+    m_Address: Assets/_/Sprites
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0fdd137859a3374ca4a051db4664d15
+    m_Address: Assets/_/Audio/Default Audio Mixer.mixer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ecce1a1076759c944b7c864e400a08ff
+    m_Address: Assets/_/Prefabs/User Interface
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: b8899827ff7b53c4ca7dc442c9d56d51, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 0c3885ca7b138134a92e3904fdcb4857, type: 2}
+    - {fileID: 11400000, guid: 94ea25e6ae40b1540acd18ba08881a1e, type: 2}
